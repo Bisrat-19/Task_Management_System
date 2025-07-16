@@ -6,40 +6,58 @@ It supports user authentication, task creation, filtering, status updates, and d
 
 ---
 
-## 🚀 Tech Stack
+## 🚀 Live Deployment
 
-- **Node.js**
-- **ExpressJS**
-- **MySQL**
-- **Prisma ORM**
-- **JWT (JSON Web Tokens)**
-- **dotenv**
-- **CORS**
+**🔗 Backend URL:**  
+[https://task-management-system-t4tr.onrender.com](https://task-management-system-t4tr.onrender.com)
 
 ---
 
-## 📦 Features
+## ⚙️ Tech Stack
 
-### ✅ Authentication
+- **Framework**: Express.js  
+- **Database**: MySQL (FreeSQLDatabase.com)  
+- **ORM**: Prisma 
+- **Authentication**: JWT  
+- **Deployment**: Render.com  
+- **Validation**: express-validator
 
-- **POST /auth/signup** – User registration (name, email, password, confirmPassword)
-- **POST /auth/login** – Login with email and password
-- Passwords hashed using `bcryptjs`
-- JWT authentication implemented
+---
 
-### 👤 User API
 
-- **GET /auth/profile** – Get authenticated user’s profile (name & email)
+## 📮 API Endpoints
 
-### 📋 Task APIs
+### 🔐 Authentication
 
-- **POST /tasks** – Create a new task (default status: `pending`)
-- **GET /tasks** – Retrieve tasks with:
-  - Pagination (`page`, `limit`)
-  - Search (`search`)
-  - Status filter (`status=pending|completed`)
-- **PATCH /tasks/:id** – Update task status to `pending` or `completed`
-- **DELETE /tasks/:id** – Delete a task
+| Method | Endpoint         | Description         |
+|--------|------------------|---------------------|
+| POST   | `/auth/signup`   | Register new user with name, email, password, and confirmPassword |
+| POST   | `/auth/login`    | Login and receive JWT |
+
+### 👤 User
+
+| Method | Endpoint        | Description                   |
+|--------|-----------------|-------------------------------|
+| GET    | `/auth/profile` | Returns authenticated user's profile |
+
+### ✅ Tasks
+
+| Method | Endpoint        | Description                                         |
+|--------|-----------------|-----------------------------------------------------|
+| POST   | `/tasks`        | Create a task (`{ "name": "Task Name" }`)          |
+| GET    | `/tasks`        | Get tasks (supports pagination, search, status)    |
+| PATCH  | `/tasks/:id`    | Update task status (`pending` or `completed`)      |
+| DELETE | `/tasks/:id`    | Delete a task                                       |
+
+#### 🔍 Query Parameters for GET /tasks
+
+- `page`: Page number (default: 1)  
+- `limit`: Items per page (default: 10)  
+- `search`: Search by task name  
+- `status`: Filter by task status (`pending` or `completed`)
+
+Example:  
+`GET /tasks?page=1&limit=5&search=design&status=pending`
 
 ---
 
