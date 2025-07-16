@@ -1,0 +1,31 @@
+# Node modules
+node_modules/
+
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv environment variables
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Prisma files generated
+prisma/dev.db
+prisma/*.sqlite
+
+# Prisma client output (optional, it can be rebuilt with `npx prisma generate`)
+.prisma/
+
+# Optional: VSCode settings
+.vscode/
+
+# Build output (if any)
+dist/
+build/
