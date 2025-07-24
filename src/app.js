@@ -8,6 +8,7 @@ const taskRoutes = require('./routes/task.routes');
 const errorMiddleware = require('./middlewares/error.middleware');
 
 const app = express();
+require('./config/db');
 
 app.use(cors({ origin: '*' }));
 app.use(express.json());
