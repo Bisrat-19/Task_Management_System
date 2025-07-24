@@ -25,7 +25,6 @@ prisma/*.sqlite
 
 # Optional: VSCode settings
 .vscode/
-
 # Build output (if any)
 dist/
 build/

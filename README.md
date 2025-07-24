@@ -16,7 +16,7 @@ It supports user authentication, task creation, filtering, status updates, and d
 ## ⚙️ Tech Stack
 
 - **Framework**: Express.js  
-- **Database**: MySQL (FreeSQLDatabase.com)  
+- **Database**: MySQL
 - **ORM**: Prisma 
 - **Authentication**: JWT  
 - **Deployment**: Render.com  
@@ -66,6 +66,6 @@ Example:
 Create a `.env` file in the root folder with:
 
 ```env
-PORT=5000
-DATABASE_URL="mysql://<user>:<password>@<host>:<port>/<database_name>"
+PORT=any
+DATABASE_URL="your_db_url"
 JWT_SECRET="your_jwt_secret_key"
